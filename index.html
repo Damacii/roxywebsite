@@ -6,6 +6,7 @@
     <title>Roxanna | Founder & Social Media Manager</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -27,6 +28,13 @@
         <span></span>
       </div>
     </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-menu" id="mobile-menu">
+      <a href="#about">About Me</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
     <!-- HERO SECTION -->
 
@@ -59,7 +67,7 @@
     </main>
 
     <!-- ABOUT ME SECTION -->
-    <section class="about-section">
+    <section class="about-section" id="about">
       <div class="about-left">
         <img
           src="Images/Roxy Hero Image.jpeg"
@@ -143,101 +151,110 @@
     </section>
 
     <!-- SERVICES SECTION -->
-    <section class="services-panel">
-      <h2 class="services-heading">SERVICES</h2>
+    <section class="services-panel" id="services">
+      <h2 class="services-heading">Services</h2>
+      <p class="services-subheading">
+        Comprehensive solutions to elevate your brand and grow your online presence
+      </p>
 
       <div class="services-columns">
         <!-- Service 1 -->
         <div class="service-column">
           <div class="service-header">
-            <p class="service-number">00-1</p>
-            <h3 class="service-title">// SOCIAL MEDIA MANAGEMENT</h3>
+            <div class="service-number">01</div>
+            <h3 class="service-title">Social Media Management</h3>
           </div>
+
+          <p class="service-description">
+            Full-service social media management that keeps your voice
+            consistent across every platform. We plan, create, schedule, and
+            measure so you can stay focused on the work you love.
+          </p>
 
           <div class="service-drawer">
             <ul class="service-list">
-              <li>/ Account Set Up &amp; Optimization</li>
-              <li>/ Custom Social Media Strategy</li>
-              <li>
-                / Content Creation (Reels, Carousels, Static Posts, Stories)
-              </li>
-              <li>/ Photography &amp; Video Capturing As Needed</li>
-              <li>/ Scheduled Posting</li>
-              <li>/ Analytics Reporting</li>
+              <li>Account Set Up & Optimization</li>
+              <li>Custom Social Media Strategy</li>
+              <li>Content Creation (Reels, Carousels, Static Posts, Stories)</li>
+              <li>Photography & Video Capturing As Needed</li>
+              <li>Scheduled Posting</li>
+              <li>Analytics Reporting</li>
             </ul>
-
-            <p class="service-description">
-              Full-service social media management that keeps your voice
-              consistent across every platform. We plan, create, schedule, and
-              measure so you can stay focused on the work you love.
-            </p>
           </div>
+
+          <a href="#contact" class="service-cta">Learn more</a>
         </div>
 
         <!-- Service 2 -->
         <div class="service-column">
           <div class="service-header">
-            <p class="service-number">00-2</p>
-            <h3 class="service-title">// CREATIVE DIRECTION</h3>
+            <div class="service-number">02</div>
+            <h3 class="service-title">Creative Direction</h3>
           </div>
+
+          <p class="service-description">
+            Creative direction that keeps every visual touchpoint aligned with
+            your concept. We guide mood, styling, talent, and lighting so each
+            shot translates your brand story flawlessly.
+          </p>
 
           <div class="service-drawer">
             <ul class="service-list">
-              <li>/ Lead Concept Development for Photoshoots</li>
-              <li>/ Art Direction, Set Design, Styling, Mood Boards</li>
-              <li>
-                / Direction on Talent Placement, Lighting, Shot Framing to Match
-                Concept
-              </li>
+              <li>Lead Concept Development for Photoshoots</li>
+              <li>Art Direction, Set Design, Styling, Mood Boards</li>
+              <li>Direction on Talent Placement, Lighting, Shot Framing to Match Concept</li>
             </ul>
-            <p class="service-description">
-              Creative direction that keeps every visual touchpoint aligned with
-              your concept. We guide mood, styling, talent, and lighting so each
-              shot translates your brand story flawlessly.
-            </p>
           </div>
+
+          <a href="#contact" class="service-cta">Learn more</a>
         </div>
 
         <!-- Service 3 -->
         <div class="service-column">
           <div class="service-header">
-            <p class="service-number">00-3</p>
-            <h3 class="service-title">// BEHIND THE SCENES (BTS)</h3>
+            <div class="service-number">03</div>
+            <h3 class="service-title">Behind The Scenes</h3>
           </div>
+
+          <p class="service-description">
+            Behind-the-scenes capture that keeps audiences engaged. We
+            document authentic moments and shape quick-turn edits tailored for
+            your social channels.
+          </p>
 
           <div class="service-drawer">
             <ul class="service-list">
-              <li>/ Raw / Unedited Photography</li>
-              <li>/ Short Candid Clips</li>
-              <li>/ Reels for Your Social Platforms</li>
+              <li>Raw / Unedited Photography</li>
+              <li>Short Candid Clips</li>
+              <li>Reels for Your Social Platforms</li>
             </ul>
-            <p class="service-description">
-              Behind-the-scenes capture that keeps audiences engaged. We
-              document authentic moments and shape quick-turn edits tailored for
-              your social channels.
-            </p>
           </div>
+
+          <a href="#contact" class="service-cta">Learn more</a>
         </div>
 
         <!-- Service 4 -->
         <div class="service-column">
           <div class="service-header">
-            <p class="service-number">00-4</p>
-            <h3 class="service-title">// PRODUCT PHOTOGRAPHY</h3>
+            <div class="service-number">04</div>
+            <h3 class="service-title">Product Photography</h3>
           </div>
+
+          <p class="service-description">
+            Polished product visuals that spotlight every feature. We capture
+            versatile assets—from raw selects to refined edits—ready for your
+            catalogs, socials, and campaigns.
+          </p>
 
           <div class="service-drawer">
             <ul class="service-list">
-              <li>/ Detail Shots</li>
-              <li>/ Multiple Angles</li>
-              <li>/ Raw and Edited Images</li>
+              <li>Detail Shots</li>
+              <li>Multiple Angles</li>
+              <li>Raw and Edited Images</li>
             </ul>
-            <p class="service-description">
-              Polished product visuals that spotlight every feature. We capture
-              versatile assets—from raw selects to refined edits—ready for your
-              catalogs, socials, and campaigns.
-            </p>
           </div>
+
+          <a href="#contact" class="service-cta">Learn more</a>
         </div>
       </div>
     </section>
@@ -255,10 +272,10 @@
             <h3 class="pricing-title">// STARTER</h3>
           </div>
           <ul class="pricing-list">
-            <li>/ 2 Platforms Managed</li>
-            <li>/ 8 Posts per Month</li>
-            <li>/ Monthly Performance Report</li>
-            <li>/ Email Support</li>
+            <li>2 Platforms Managed</li>
+            <li>8 Posts per Month</li>
+            <li>Monthly Performance Report</li>
+            <li>Email Support</li>
           </ul>
           <button class="pricing-btn">Get Started</button>
         </div>
@@ -270,10 +287,10 @@
             <h3 class="pricing-title">// GROWTH</h3>
           </div>
           <ul class="pricing-list">
-            <li>/ 3 Platforms Managed</li>
-            <li>/ 12–16 Posts per Month</li>
-            <li>/ Community Management</li>
-            <li>/ Biweekly Reports & Strategy Calls</li>
+            <li>3 Platforms Managed</li>
+            <li>12–16 Posts per Month</li>
+            <li>Community Management</li>
+            <li>Biweekly Reports &amp; Strategy Calls</li>
           </ul>
           <button class="pricing-btn">Book Consultation</button>
         </div>
@@ -285,10 +302,10 @@
             <h3 class="pricing-title">// PREMIUM</h3>
           </div>
           <ul class="pricing-list">
-            <li>/ Full Social Management</li>
-            <li>/ Paid Ad Strategy</li>
-            <li>/ Influencer Coordination</li>
-            <li>/ Weekly Reporting</li>
+            <li>Full Social Management</li>
+            <li>Paid Ad Strategy</li>
+            <li>Influencer Coordination</li>
+            <li>Weekly Reporting</li>
           </ul>
           <button class="pricing-btn">Talk to Us</button>
         </div>
@@ -296,7 +313,7 @@
     </section>
 
     <!-- FOOTER SECTION -->
-    <footer class="footer">
+    <footer class="footer" id="contact">
       <div class="footer-top">
         <div class="footer-left">
           <ul class="footer-nav">
