@@ -31,22 +31,6 @@ if (window.ScrollTrigger) {
     });
   });
 
-  // Animate gallery items
-  gsap.utils.toArray(".gallery-item").forEach((item, index) => {
-    gsap.from(item, {
-      opacity: 0,
-      y: 30,
-      duration: 0.6,
-      delay: index * 0.1,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: item,
-        start: "top 90%",
-        toggleActions: "play none none none",
-      },
-    });
-  });
-
   // Animate service cards
   gsap.utils.toArray(".service-column").forEach((card, index) => {
     gsap.from(card, {
