@@ -10,43 +10,7 @@ if (window.ScrollTrigger) {
 /* ========================================================================== */
 /* Hero Image Interaction (Apple-style)                                       */
 /* ========================================================================== */
-const front = document.querySelector(".front-img");
-const back = document.querySelector(".back-img");
-const wrapper = document.querySelector(".image-wrapper");
-
-if (wrapper && front && back) {
-  wrapper.addEventListener("mouseenter", () => {
-    gsap.to(front, {
-      opacity: 0,
-      scale: 1.03,
-      duration: 0.6,
-      ease: "power2.out",
-    });
-
-    gsap.to(back, {
-      opacity: 1,
-      scale: 1,
-      duration: 0.6,
-      ease: "power2.out",
-    });
-  });
-
-  wrapper.addEventListener("mouseleave", () => {
-    gsap.to(front, {
-      opacity: 1,
-      scale: 1,
-      duration: 0.6,
-      ease: "power2.out",
-    });
-
-    gsap.to(back, {
-      opacity: 0.4,
-      scale: 0.96,
-      duration: 0.6,
-      ease: "power2.out",
-    });
-  });
-}
+/* (Hover swap removed to keep single static hero image) */
 
 /* ========================================================================== */
 /* Smooth Scroll Animations (Apple-style fade-in)                            */
