@@ -10,9 +10,35 @@
 
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="is-loading">
+    <div class="site-preloader" id="site-preloader" aria-live="polite">
+      <div class="site-preloader__inner">
+        <div class="site-preloader__logo-progress" aria-hidden="true">
+          <img
+            src="Images/Monogram.svg"
+            alt=""
+            class="site-preloader__logo site-preloader__logo--base"
+          />
+          <div class="site-preloader__logo-fill" id="site-preloader-bar">
+            <img
+              src="Images/Monogram.svg"
+              alt="Social Luxx monogram"
+              class="site-preloader__logo"
+            />
+          </div>
+        </div>
+        <p class="site-preloader__count" id="site-preloader-count">0%</p>
+      </div>
+    </div>
+
     <header class="roxy-header">
-      <div class="logo">SOCIALLUXX</div>
+      <div class="logo">
+        <img
+          src="Images/logo social luxx.png"
+          alt="Social Luxx"
+          class="logo-image"
+        />
+      </div>
 
       <!-- Desktop Navigation -->
       <nav class="nav-links">
@@ -42,7 +68,7 @@
       <div class="hero-text">
         <span class="small-title">YOUR NEW SOCIAL MEDIA MANAGER</span>
         <h2 class="headline">
-          LET’S ELEVATE <br />YOUR BRAND<br />AND PRESENCE.
+          LET’S CAPTURE <br />YOUR BRAND<br />AND PRESENCE.
         </h2>
         <p class="location">BASED IN CALIFORNIA</p>
         <div class="roles">
@@ -88,7 +114,7 @@
         </p>
         <p class="about-text">
           I build content that sounds like you, and actually moves the
-          needle-I'm all about growth, authenticity and turning your goals into
+          needle-I'm all about authenticity and turning your goals into
           tangible outcomes you can be proud of. If you're looking for genuine
           engagement, a consistent voice, and someone who's excited to grow with
           you, let's connect and create something you love.
@@ -101,7 +127,7 @@
     <section class="services-panel" id="services">
       <h2 class="services-heading">Services</h2>
       <p class="services-subheading">
-        Comprehensive solutions to elevate your brand and grow your online presence
+        Comprehensive solutions to capture your brand and grow your online presence
       </p>
 
       <div class="services-columns">
@@ -120,12 +146,11 @@
 
           <div class="service-drawer">
             <ul class="service-list">
-              <li>Account Set Up & Optimization</li>
               <li>Custom Social Media Strategy</li>
               <li>Content Creation (Reels, Carousels, Static Posts, Stories)</li>
               <li>Photography & Video Capturing As Needed</li>
               <li>Scheduled Posting</li>
-              <li>Analytics Reporting</li>
+
             </ul>
           </div>
 
@@ -196,6 +221,8 @@
             <ul class="service-list">
               <li>Product Shots</li>
               <li>Branding Photoshoot</li>
+              <li>Campaign Photography</li>
+              <li>Lifestyle Content Photography</li>
               <li>Special Event Photoshoot</li>
             </ul>
           </div>
@@ -232,7 +259,7 @@
         <div class="pricing-card popular">
           <div class="pricing-header">
             <p class="pricing-number">02</p>
-            <h3 class="pricing-title">// GROWTH</h3>
+            <h3 class="pricing-title">// ENTREPRENEUR</h3>
           </div>
           <ul class="pricing-list">
             <li>2 Platforms Managed</li>
@@ -241,22 +268,6 @@
             <li>Content Scheduling</li>
             <li>Community Management</li>
             <li>Monthly Performance Meeting &amp; Strategy Calls</li>
-          </ul>
-          <a href="https://forms.socialluxx.agency/r/RGWbJv" class="pricing-btn">Inquire</a>
-        </div>
-
-        <!-- Premium -->
-        <div class="pricing-card">
-          <div class="pricing-header">
-            <p class="pricing-number">03</p>
-            <h3 class="pricing-title">// PREMIUM</h3>
-          </div>
-          <ul class="pricing-list">
-            <li>Full Social Management</li>
-            <li>3 Platforms Managed</li>
-            <li>5 Grid posts per week</li>
-            <li>Weekly Reporting</li>
-            <li>Biweekly Performance Meeting &amp; Strategy Calls</li>
           </ul>
           <a href="https://forms.socialluxx.agency/r/RGWbJv" class="pricing-btn">Inquire</a>
         </div>
@@ -289,7 +300,7 @@
 
       <div class="footer-bottom">
         <p>Los Angeles, CA · (GMT-8)</p>
-        <p>© 2025 Socialluxx · All Rights Reserved</p>
+        <p>© 2026 Socialluxx · All Rights Reserved</p>
         <p>Design | Development — Damacii Studios</p>
       </div>
     </footer>

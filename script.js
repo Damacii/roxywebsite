@@ -3,7 +3,7 @@
 /* ========================================================================== */
 
 // Register GSAP plugins
-if (window.ScrollTrigger) {
+if (window.gsap && window.ScrollTrigger) {
   gsap.registerPlugin(ScrollTrigger);
 }
 
@@ -15,7 +15,15 @@ if (window.ScrollTrigger) {
 /* ========================================================================== */
 /* Smooth Scroll Animations (Apple-style fade-in)                            */
 /* ========================================================================== */
-if (window.ScrollTrigger) {
+let animationsInitialized = false;
+
+const initSiteAnimations = () => {
+  if (animationsInitialized || !window.gsap || !window.ScrollTrigger) {
+    return;
+  }
+
+  animationsInitialized = true;
+
   // Animate sections on scroll
   gsap.utils.toArray("section").forEach((sec) => {
     gsap.from(sec, {
@@ -63,7 +71,6 @@ if (window.ScrollTrigger) {
     });
   });
 
-  // Animate hero text elements
   gsap.from(".small-title", {
     opacity: 0,
     y: 20,
@@ -96,7 +103,6 @@ if (window.ScrollTrigger) {
     ease: "power2.out",
   });
 
-  // Animate hero images
   gsap.from(".image-wrapper", {
     opacity: 0,
     scale: 0.95,
@@ -104,7 +110,100 @@ if (window.ScrollTrigger) {
     delay: 0.5,
     ease: "power2.out",
   });
-}
+};
+
+/* ========================================================================== */
+/* Site Preloader                                                             */
+/* ========================================================================== */
+const sitePreloader = document.getElementById("site-preloader");
+const sitePreloaderBar = document.getElementById("site-preloader-bar");
+const sitePreloaderCount = document.getElementById("site-preloader-count");
+
+const initPreloader = () => {
+  if (!sitePreloader || !sitePreloaderBar || !sitePreloaderCount) {
+    initSiteAnimations();
+    return;
+  }
+
+  const startTime = window.performance ? performance.now() : Date.now();
+  const loaderDuration = 2500;
+
+  let displayedProgress = 0;
+  let pageLoaded = false;
+  let revealStarted = false;
+  let animationFrameId = null;
+
+  const renderProgress = (value) => {
+    const clampedValue = Math.min(value, 100);
+    sitePreloader.style.setProperty("--loader-progress", clampedValue.toFixed(2));
+    sitePreloaderCount.textContent = `${Math.round(clampedValue)}%`;
+  };
+
+  const revealSite = () => {
+    if (revealStarted) {
+      return;
+    }
+
+    revealStarted = true;
+    document.body.classList.remove("is-loading");
+    initSiteAnimations();
+
+    if (window.gsap) {
+      gsap.to(sitePreloader, {
+        opacity: 0,
+        duration: 0.45,
+        ease: "power2.out",
+        onComplete: () => {
+          sitePreloader.remove();
+        },
+      });
+      return;
+    }
+
+    sitePreloader.remove();
+  };
+
+  const tickProgress = (timestamp) => {
+    const elapsed = timestamp - startTime;
+    const timeProgress = Math.min((elapsed / loaderDuration) * 100, 100);
+    displayedProgress = timeProgress;
+    renderProgress(displayedProgress);
+
+    if (displayedProgress < 100) {
+      animationFrameId = window.requestAnimationFrame(tickProgress);
+      return;
+    }
+
+    animationFrameId = null;
+
+    if (pageLoaded && displayedProgress >= 100) {
+      revealSite();
+    }
+  };
+
+  const startTick = () => {
+    if (!animationFrameId) {
+      animationFrameId = window.requestAnimationFrame(tickProgress);
+    }
+  };
+
+  renderProgress(0);
+  startTick();
+
+  window.addEventListener(
+    "load",
+    () => {
+      pageLoaded = true;
+
+      if (!animationFrameId && displayedProgress >= 100) {
+        revealSite();
+      }
+    },
+    { once: true }
+  );
+};
+
+initPreloader();
 
 /* ========================================================================== */
 /* Mobile Navigation (Apple-style)                                            */
